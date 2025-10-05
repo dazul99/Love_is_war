@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Sprite[] datersImages;
 
+    [SerializeField] private Color[] datersColors;
+
     private int love;
     private int likeliness;
     private int ghosting;
@@ -26,6 +28,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject datingImage;
 
     private bool dating;
+    private int personDating;
 
     [SerializeField] private int standardValue = 30;
 
@@ -40,6 +43,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI rightOption;
     [SerializeField] private TextMeshProUGUI answer;
 
+    [SerializeField] private Image backgroundImage;
+
+    private bool screwedUp = false;
 
     public enum dater
     {
@@ -56,7 +62,7 @@ public class GameManager : MonoBehaviour
         dated = new bool[daters.Length];
         dating = false;
         for (int i = 0; i < dated.Length; i++) dated[i] = false;
-        ChangeToSelection();
+        ChangeToSelection(-1);
     }
 
     private void Update()
@@ -69,8 +75,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void ChangeToSelection()
+    private void ChangeToSelection(int person)
     {
+        if(person != -1)
+        {
+            daters[person].gameObject.SetActive(false);
+            personDating = -1;
+        }
         datingPanel.SetActive(false);
         selectionPanel.SetActive(true);
         loveSlider.value = likelinessSlider.value = ghostingSlider.value = standardValue;
@@ -78,42 +89,70 @@ public class GameManager : MonoBehaviour
 
     public void StartDating(int person)
     {
+        personDating = person;
         datingPanel.SetActive(true);
         selectionPanel.SetActive(false);
         Debug.Log((dater) person);
         datingImage.GetComponent<Image>().sprite = datersImages[person];
         dating = true;
+        backgroundImage.color = datersColors[person];
     }
 
     public void ConversationChoice(bool x)
     {
+        if (screwedUp)
+        {
+            ChangeToSelection(personDating);
+        }
         Debug.Log(x);
 
+        CheckParameters();
+        if (!screwedUp) NextConvo();
+    }
+
+    private void NextConvo()
+    {
 
     }
 
     private void CheckParameters()
     {
-        if(ghosting >= 100)
-        {
+        if (ghosting >= 100) Ghosting();
+        if (likeliness <= 0) Blocked();
+        else if (likeliness >= 100) Friendzoned();
+        if (love <= 0) Rejection();
+        else if (love >= 100) Yandere();
+        
+    }
 
-        }
-        if(love <= 0)
-        {
+    private void Ghosting()
+    {
+        screwedUp = true;
+        
+    }
 
-        }
-        else if (love >= 100)
-        {
+    private void Rejection()
+    {
+        screwedUp = true;
 
-        }
-        if(likeliness <= 0)
-        {
-            
-        }
-        else if(likeliness >= 100)
-        {
+    }
 
-        }
+    private void Yandere()
+    {
+        screwedUp = true;
+
+    }
+
+    private void Blocked()
+    {
+        screwedUp = true;
+
+    }
+
+    private void Friendzoned()
+    {
+        screwedUp = true;
+
     }
 
 }

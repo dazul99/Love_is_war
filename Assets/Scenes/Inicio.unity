@@ -1016,31 +1016,31 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '1- click the play button :D
+  m_text: '1- Click the play button :D
 
 
-    2- choose a character to match
+    2- Choose a character to match
 
 
     3-
     Have a conversation with that character!
 
 
-    4- try to balance the three bars
+    4- Try to balance the three bars
     on top of the character, friendliness, romantic interest and ghosting (from left
     to right)
 
 
-    5- keep friendliness and romantic interest in the middle and
+    5- Keep friendliness and romantic interest in the middle and
     make sure ghosting is always down
 
 
-    6- after talking to them for a while
+    6- After talking to them for a while
     you can choose to stay with them or go after someone else too!
 
 
-    7- try not
-    to stay alone for your whole life'
+    7- Try not
+    to stay alone for your whole life (I know it''s hard)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1134,7 +1134,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &761729451
 MonoBehaviour:
   m_ObjectHideFlags: 0
