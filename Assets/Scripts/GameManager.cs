@@ -45,6 +45,10 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Image backgroundImage;
 
+    [SerializeField] TextManager textManager;
+
+    private int iD = 1;
+
     private bool screwedUp = false;
 
     public enum dater
@@ -59,6 +63,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        screwedUp = false;
         dated = new bool[daters.Length];
         dating = false;
         for (int i = 0; i < dated.Length; i++) dated[i] = false;
@@ -84,11 +89,14 @@ public class GameManager : MonoBehaviour
         }
         datingPanel.SetActive(false);
         selectionPanel.SetActive(true);
-        loveSlider.value = likelinessSlider.value = ghostingSlider.value = standardValue;
+        // StayPixel says no to this line, pls help
+        loveSlider.value = likelinessSlider.value = ghostingSlider.value = love = likeliness = ghosting = standardValue;
+        
     }
 
     public void StartDating(int person)
     {
+
         personDating = person;
         datingPanel.SetActive(true);
         selectionPanel.SetActive(false);
@@ -96,6 +104,7 @@ public class GameManager : MonoBehaviour
         datingImage.GetComponent<Image>().sprite = datersImages[person];
         dating = true;
         backgroundImage.color = datersColors[person];
+        NextConvo();
     }
 
     public void ConversationChoice(bool x)
@@ -105,13 +114,35 @@ public class GameManager : MonoBehaviour
             ChangeToSelection(personDating);
         }
         Debug.Log(x);
-
+        ChangeParameters(x);
         CheckParameters();
         if (!screwedUp) NextConvo();
     }
 
     private void NextConvo()
     {
+        string[] textos = textManager.GetText(iD);
+        answer.text = textos[0];
+        leftOption.text = textos[1];
+        rightOption.text = textos[2];
+        
+        
+    }
+
+    private void ChangeParameters(bool x)
+    {
+        int[] parametros = textManager.GetParameters(x, iD);
+
+        ghosting += parametros[2]; 
+        ghostingSlider.value = ghosting;
+
+        love += parametros[1]; 
+        loveSlider.value = love;
+
+        likeliness += parametros[3]; 
+        likelinessSlider.value = likeliness;
+
+        iD = parametros[3];
 
     }
 
@@ -155,4 +186,7 @@ public class GameManager : MonoBehaviour
 
     }
 
+    
+
+    
 }
