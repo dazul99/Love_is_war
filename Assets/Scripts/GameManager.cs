@@ -55,6 +55,10 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] TextManager textManager;
 
+    [SerializeField] private AudioClip[] songs;
+    [SerializeField] private AudioClip sound;
+    private int currentSong = 1;
+
     private int iD = 1;
 
     private bool screwedUp = false;
@@ -71,6 +75,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        float aux = PlayerPrefs.GetFloat("volume");
+        audioS.volume = aux;
         screwedUp = false;
         dated = new bool[daters.Length];
         dating = false;
@@ -81,6 +87,26 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if(currentSong == -1)
+        {
+            if (audioS.time >= sound.length)
+            {
+                currentSong = 0;
+                audioS.clip = songs[0];
+                audioS.Play();
+            }
+        }
+        else
+        {
+            if (audioS.time >= songs[currentSong].length)
+            {
+                currentSong++;
+                if(currentSong >= songs.Length) currentSong = 0;
+                audioS.clip = songs[currentSong];
+                audioS.Play();
+            }
+        }
+        
         if (dating)
         {
             Vector3 mousePos = Input.mousePosition;
@@ -218,7 +244,8 @@ public class GameManager : MonoBehaviour
         datingImage.SetActive(false);
         answer.fontSize = creepySize;
         answer.color = red;
-
+        audioS.clip = sound;
+        currentSong = -1;
         audioS.Play();
 
         answer.text = "IloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyou";

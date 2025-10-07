@@ -1,0 +1,14 @@
+ID,Texto,Respuesta1,Like_1,Love_1,Leave_1,Travel_1,Respuesta2,Like_2,Love_2,Leave_2,Travel_2
+1,Hey,Hey? That's all you could think about?,15,-5,-5,2,"Hey, nice to meet you Emily",0,-5,10,3
+2,"haha, what an original reply, I was just toying with you","Good, I was worried you were being serious for a second",5,-5,15,3,"If you’re toying with me, you’d better not break your new favorite toy.",-10,15,-10,5
+3,"So, are you always this boring, or is today special?","Yeah today is special, guess your pressence is making me confused",10,10,-5,5,"Oh please, you didn't see me trying yet",-5,5,10,4
+4,Trying? Sounds exhausting already,"Don't worry, I have enough energy for both of us",-5,10,-15,6,Is there something that doesn't sound exhausting to you...?,-15,-10,5,7
+5,"Pfft, what's with that answer? you're funny after all",If you think I'm funny now Imagine if we met in person,5,-5,5,12,I was being serious though...,-15,-15,20,9
+6,"Energy, huh? I burn mine under the moonlight","So you’re a creature of the night, then?",5,5,-5,10,I’d join you if the view’s worth it,0,10,0,8
+7,"well, if there is, it's definitely not related to you or this conversation",ouch ,-10,-10,10,0,"Damn, and here I thought I was making progress",-10,-10,10,0
+8,"you want to join me? Well, I suppose you can, just for one night",Guess that means I'll have to convince you to give me a second chance after that,-5,-5,0,13,"Oh trust me, after that night you'll regret those last words",0,10,-10,13
+9,You talk big for someone who probably sleeps with a night light.,"Guess you’ll have to stay and protect me, then",0,10,-10,11,"hey, no need to be rude to my night light!",0,0,100,0
+10,"I suppose I could be called that, yeah","Just like me then, could I join you someday? or well... night?",10,10,0,8,Please sit on my face...,-100,0,0,0
+11,"That's... An interesting offer, might take you up on that, you free tonight?",sounds good to me!,5,5,0,13,"Ohh, I'm actually busy tonight...",0,0,100,0
+12,"Is that so? well, might as well give you a chance","Oh trust me, you won't regret it",0,0,0,13,just one? Guess I prepare my best jokes just for you,10,5,0,13
+13,"Well, see you tonight then",See you tonight!,0,0,0,1000,I can't wait till tonight!,0,0,0,1000
