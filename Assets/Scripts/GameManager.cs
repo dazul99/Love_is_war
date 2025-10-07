@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject selectionPanel;
     [SerializeField] private GameObject datingPanel;
+    [SerializeField] private GameObject pausePanel;
+    [SerializeField] private GameObject gameOverPanel;
+
+    [SerializeField] private AudioSource audioS;
 
     [SerializeField] private GameObject[] daters;
     private bool[] dated;
@@ -20,6 +25,9 @@ public class GameManager : MonoBehaviour
     private int likeliness;
     private int ghosting;
 
+    private float standardSize = 50.54f;
+    private float creepySize = 61.1f;
+    private Color red = Color.red;
 
     [SerializeField] private Slider loveSlider;
     [SerializeField] private Slider likelinessSlider;
@@ -70,6 +78,7 @@ public class GameManager : MonoBehaviour
         ChangeToSelection(-1);
     }
 
+
     private void Update()
     {
         if (dating)
@@ -87,20 +96,22 @@ public class GameManager : MonoBehaviour
             daters[person].gameObject.SetActive(false);
             personDating = -1;
         }
+        pausePanel.SetActive(false);
         datingPanel.SetActive(false);
         selectionPanel.SetActive(true);
         // StayPixel says no to this line, pls help
         loveSlider.value = likelinessSlider.value = ghostingSlider.value = love = likeliness = ghosting = standardValue;
-        
+        datingImage.SetActive(true);
+        answer.fontSize = standardSize;
+        iD = 1;
     }
 
     public void StartDating(int person)
     {
-
+        textManager.LoadAppCSV(person);
         personDating = person;
         datingPanel.SetActive(true);
         selectionPanel.SetActive(false);
-        Debug.Log((dater) person);
         datingImage.GetComponent<Image>().sprite = datersImages[person];
         dating = true;
         backgroundImage.color = datersColors[person];
@@ -109,18 +120,41 @@ public class GameManager : MonoBehaviour
 
     public void ConversationChoice(bool x)
     {
+        if(iD == 1000)
+        {
+            if(x)
+            {
+                ChangeToSelection(personDating);
+                return;
+            }
+            else
+            {
+                gameOverPanel.SetActive(true);
+                return;
+            }
+        }
+
         if (screwedUp)
         {
             ChangeToSelection(personDating);
+            return;
         }
-        Debug.Log(x);
+
         ChangeParameters(x);
-        CheckParameters();
+
+        if(iD != 1000) CheckParameters();
         if (!screwedUp) NextConvo();
     }
 
     private void NextConvo()
     {
+        if(iD == 1000)
+        {
+            answer.text = "Congratulations, you got a date!";
+            leftOption.text = "Stay with this person";
+            rightOption.text = "Try someone else";
+            return;
+        }
         string[] textos = textManager.GetText(iD);
         answer.text = textos[0];
         leftOption.text = textos[1];
@@ -159,34 +193,79 @@ public class GameManager : MonoBehaviour
     private void Ghosting()
     {
         screwedUp = true;
-        
+        datingImage.SetActive(false);
+        answer.text = "Days passed, and there is no answer...";
+        leftOption.text = "Hi?";
+        rightOption.text = "Is someone there...?";
     }
 
     private void Rejection()
     {
         screwedUp = true;
+        datingImage.SetActive(false);
 
+        answer.text = "I don't think this is gonna work, bye";
+        leftOption.text = "Wait but-";
+        rightOption.text = "Bye";
     }
 
     private void Yandere()
     {
-        screwedUp = true;
 
+        //Dazul does not approve of any of this, please help me I am scared
+
+        screwedUp = true;
+        datingImage.SetActive(false);
+        answer.fontSize = creepySize;
+        answer.color = red;
+
+        audioS.Play();
+
+        answer.text = "IloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyouIloveyou";
+        leftOption.text = "Open the door";
+        rightOption.text = "Get the gun and hide";
     }
 
     private void Blocked()
     {
         screwedUp = true;
+        datingImage.SetActive(false);
 
+        answer.text = "*you have meen blocked by this user*";
+        leftOption.text = "Okay? lmao";
+        rightOption.text = "T-T";
     }
 
     private void Friendzoned()
     {
-        screwedUp = true;
+        screwedUp = true; 
+        datingImage.SetActive(false);
+
+        answer.text = "Sorry, I don't think I can see you as more than a friend";
+        leftOption.text = "BuT I lOvE YoU";
+        rightOption.text = "okay bro";
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
 
     }
 
-    
+    public void ShowPause()
+    {
+        pausePanel.SetActive(true);
+    }
 
-    
+    public void HidePause()
+    {
+        pausePanel.SetActive(false);
+
+    }
+
 }

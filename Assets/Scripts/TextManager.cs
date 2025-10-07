@@ -25,16 +25,11 @@ public class AppDialogue
 
 public class TextManager : MonoBehaviour
 {
-    public TextAsset csvFile;
+    public TextAsset[] csvFile;
 
     public Dictionary<int, AppDialogue> dialogueData = new Dictionary<int, AppDialogue>();
 
-    void Awake()
-    {
-        LoadAppCSV();
-    }
-
-    void LoadAppCSV()
+    public void LoadAppCSV(int x)
     {
         if (csvFile == null)
         {
@@ -42,7 +37,7 @@ public class TextManager : MonoBehaviour
             return;
         }
 
-        string[] lines = csvFile.text.Split('\n');
+        string[] lines = csvFile[x].text.Split('\n');
         if (lines.Length <= 1)
         {
             Debug.LogError("CSV file is empty or malformed!");
@@ -92,7 +87,6 @@ public class TextManager : MonoBehaviour
             dialogueData[d.ID] = d;
         }
 
-        Debug.Log($"Loaded {dialogueData.Count} dialogues from CSV.");
     }
 
     // Maneja comas dentro de comillas

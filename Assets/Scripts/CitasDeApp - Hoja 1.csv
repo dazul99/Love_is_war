@@ -1,0 +1,17 @@
+ID,Texto,Respuesta1,Like_1,Love_1,Leave_1,Travel_1,Respuesta2,Like_2,Love_2,Leave_2,Travel_2
+1,Hey! um... I saw we matched!,"Oh, it was an accident, but I don't regret matching with a girl as pretty as you",-10,-10,0,2,Oh hey! Yeah I loved your profile,10,5,0,3
+2,A girl-? I am a guy though...,"Wait, really? That’s even better! I love cute guys",15,15,-5,4,"Oh! That's a shame, luckily I swing both ways",0,-10,10,5
+3,Oh really? thank you,Thank me later... maybe over coffee or something?,5,10,0,6,"No need to thank me, I should be thanking you instead for giving me a chance",-10,-5,10,7
+4,"hehe, thank you for the compliment ^~^",Thank me later... maybe over coffee or something?,5,10,0,6,So... What are you looking for in this app?,5,5,-10,8
+5,I... guess that's good,So... What did you like so much about me?,-10,-10,15,9,So... What are you looking for in this app?,5,5,-10,8
+6,"Cofee huh...? sounds good, some day for sure!","Yeah, we can go to my place after that too",-15,-15,10,11,"And right after that we could just go on a date, maybe go to the acuarium ",0,10,-10,12
+7,"hey, don't talk about yourself that way! It's not exactly something I like...","Oh no, I'm so sorry, please forgive me!",-50,-50,50,5,"I was just kidding, sorry! My sense of humor is a bit weird",5,5,0,10
+8,"you know, the ususal... Mostly for a special someone","yikes, I was expecting something... not so long term",-10,-15,15,11,"Oh that's great, just like me then!",10,10,-10,12
+9,"Uh... not too sure, I guess I thought you looked good?","I was just kidding, sorry! My sense of humor is a bit weird",5,5,0,10,Is that so? you really have great taste dear,-15,-15,25,0
+10,"Oh! haha, I got scared! Thought you were a weirdo for a sec","Hahaha, I am weird, but not THAT weird",10,10,-5,14,"Don't worry, I promise I won't do it again",-5,-5,10,14
+11,Oh... Yeah that's like... completely opposite from what I am looking for,"It's okay though, I am open to anything",5,10,0,12,"Yeah... this is not gonna work, sorry ",-10,-100,25,0
+12,Oh that's great! So... When are you free? ,"Oh, I'm actually busy all week, and the one after too... ",-15,-15,20,13,"I'm quite busy, but I can make some room for a date this weekend",5,5,0,15
+13,"That sucks... well, I can't promise I'll be waiting forever, but tell me when you are free","Actually, screw it, I'll make room for you, let's meet this weekend!",10,10,0,15,"That's... kinda rough to hear, but fair enough",-10,-10,30,16
+14,"Well, I like jokes so you're fine! But don't do that again... Please",Only if you agree to a date with me this weekend,10,10,0,15,"I can't make promises, I like messing with you",-50,0,0,0
+15,Great! It's a date then!,"See you on the weekend, Alex",0,0,0,1000,I'll be looking forward to it!,0,0,0,1000
+16,"Well, it is what it is",I hope we can talk again soon,0,0,100,0,"Bye, I'll tell you when I'm free",0,0,100,0
