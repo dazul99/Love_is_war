@@ -1,0 +1,17 @@
+ID,Texto,Respuesta1,Like_1,Love_1,Leave_1,Travel_1,Respuesta2,Like_2,Love_2,Leave_2,Travel_2
+1,"Hey there :) I don’t usually message first, but you looked kind.","That’s sweet of you to say.",10,5,0,2,"Oh? So I’m special then?",5,10,0,3
+2,"Maybe a little ;) So… what brings you to this app?","Just looking to meet new people.",10,5,0,4,"Mostly boredom, to be honest.",0,0,0,5
+3,"Haha, don’t push your luck. I’m just being nice.","Guess I’ll have to earn that next message.",10,10,0,4,"Then I’ll take the win and vanish ;)",0,0,-5,5
+4,"Fair enough. I’m a single mom, so my time is... limited.","That’s impressive, balancing everything.",10,10,0,6,"Oh, so no wild nights out then?",0,0,-10,5
+5,"I appreciate honesty, even if it’s not romantic haha.","That’s me — honest to a fault.",5,5,0,4,"So you’ll block me now?",0,0,-5,7
+6,"Yeah, it’s a lot, but my son keeps me grounded.","You sound like a great mom.",10,10,0,8,"Kids, huh? That’s... a lot of work.",0,0,-5,7
+7,"It is work, but he’s worth every second.","That’s really sweet.",5,10,0,8,"I guess I’m not ready for that kind of life.",0,0,-10,9
+8,"I don’t get much adult conversation, so this is kinda nice.","I’m glad I can give you that break.",10,10,0,10,"So this is your ‘me time’? ;)",5,5,0,9
+9,"Haha maybe! It’s rare I get to just chat.","Then let’s make it a good one.",10,10,0,10,"Don’t let me keep you if you’re busy.",0,0,0,5
+10,"You’re actually easy to talk to. That’s rare on here.","You too, feels... comfortable.",10,15,0,11,"I try my best, haha.",5,5,0,11
+11,"It’s nice. I almost forgot what it felt like to talk without pressure.","You deserve that kind of peace.",15,15,0,12,"That’s the app magic before the awkward phase ;)",5,5,0,12
+12,"Haha, maybe! Still, you seem genuine.","I try to be, especially with someone like you.",15,15,0,13,"Only when I’m not joking.",5,0,0,9
+13,"Flattery will get you everywhere ;)","Then I’ll keep it coming.",10,15,0,14,"It’s not flattery if it’s true.",10,10,0,14
+14,"Careful, I might start believing you.","Then let me prove I mean it.",15,20,0,15,"You’d better, I have high standards.",5,5,0,15
+15,"You’re funny… and actually kind of refreshing.","Guess I’m doing something right.",10,15,0,16,"So does that mean I passed the vibe check?",10,10,0,16
+16,"Haha, you did. Maybe we could grab coffee sometime?","I’d like that a lot.",20,25,0,1,"We’ll see… I don’t want to rush it.",10,10,0,3
